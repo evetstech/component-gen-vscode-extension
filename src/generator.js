@@ -30,8 +30,6 @@ const uiKitVerbage = {
 };
 
 class Generator {
-  componentFiles = ['main', 'test', 'story'];
-
   defaultPath = 'src/';
 
   constructor(workspaceRoot, window) {
@@ -108,7 +106,7 @@ class Generator {
       return { cancel: true };
     }
     return {
-      folder: this.toAbsolutePath('components/' + atomicType + 's/' + folder + '/' + toPascalCase(toWords(name))),
+      folder: this.toAbsolutePath('components/' + atomicType + 's/' + folder),
       name: toPascalCase(toWords(name)),
       atomicType: atomicType.substr(0, 1).toUpperCase() + atomicType.substr(1) + 's',
       type: 'uikit'
